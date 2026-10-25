@@ -3,7 +3,6 @@ const addButton = document.getElementsByTagName('button')[0];
 const incompleteTaskHolder = document.getElementById('incompleteTasks');
 const completedTasksHolder = document.getElementById('completed-tasks');
 
-//New task list item
 const createNewTaskElement = function (taskString) {
   const listItem = document.createElement('li');
 
@@ -46,8 +45,6 @@ const addTask = function () {
   taskInput.value = '';
 };
 
-//Edit an existing task.
-
 const editTask = function () {
   const listItem = this.parentNode;
 
@@ -66,7 +63,6 @@ const editTask = function () {
   listItem.classList.toggle('editMode');
 };
 
-//Delete task.
 const deleteTask = function () {
   const listItem = this.parentNode;
   const parentList = listItem.parentNode;
@@ -80,9 +76,6 @@ const handleTaskToggle = function () {
   targetList.appendChild(listItem);
 };
 
-//The glue to hold it all together.
-
-//Set the click handler to the addTask function.
 addButton.addEventListener('click', addTask);
 
 const bindTaskEvents = function (taskListItem) {
